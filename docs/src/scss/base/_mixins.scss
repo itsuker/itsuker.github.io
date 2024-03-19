@@ -1,0 +1,44 @@
+@use './variables' as variables;
+
+/*
+@mixin  color{
+    color: black;
+    font-size: 2rem;
+    text-decoration: none;
+}
+/*
+//Este mixin es como una funcion que le pasa el color
+@mixin bgcolor($color){
+    background-color: $color ;
+}
+*/
+
+@mixin telefono { //nombre del mixin
+    @media(min-width: variables.$telefono){ //variable del mixin
+        @content; //todo lo que este dentro del mq lo inyecte en las llaves
+    }
+}
+
+@mixin tablet {
+    @media(min-width: variables.$tablet){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media(min-width: variables.$desktop ){
+        @content;
+    }
+}
+
+@mixin desktopXL {
+    @media(min-width: variables.$desktopXL ){
+     @content;
+    }
+}
+
+@mixin grid($columnas,$espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}

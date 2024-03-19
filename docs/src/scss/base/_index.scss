@@ -1,0 +1,10 @@
+//exporta los archivos en el index
+@forward 'normalize';
+@forward 'variables';
+@forward 'globales';
+@forward 'tipografia';
+@forward 'mixins';
+/*
+@forward //forward solo va incluir uno adentro de otro  del formato que se va usar
+@use   //van incluirlos y usar su contenido
+@import //van incluirlos y usar su contenido*/

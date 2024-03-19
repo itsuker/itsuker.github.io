@@ -1,0 +1,65 @@
+@use '../base/variables' as variable;  //as alias de las variables
+@use '../base/mixins' as mixin; //mixin de las estructuras como shorcoud 
+
+
+.contenido-contacto {
+    @include mixin.tablet {
+        @include mixin.grid(2, variable.$separacion);
+        background-image: url(../img/granos_cafe.jpg);
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 40%;
+        
+    }
+    
+}
+.formulario{
+    .campo{
+        margin-bottom: 2rem;
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+        label{
+            text-transform: uppercase;
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: left;
+        }
+
+      input:not([type="submit"]),select{ //esto va seleccionar todos exepto el submit
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+        border: .5rem solid variable.$primario;
+      }
+        
+        input[type="submit"]{  //selecciona con los corchetes solo el de tipo submit
+        background-color: variable.$primario;
+        width: 100%;
+        border: none;
+        padding: 2rem;
+        color: variable.$blanco;
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition-duration: .3s;
+        
+        &:hover{
+           // box-shadow: ;
+           cursor: pointer;
+           color: variable.$secundario;
+           transform: scale(0.9);
+           box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+          
+        }
+        @include mixin.tablet {
+            width: 50%;
+            display:flex;
+            justify-content: center;
+          }
+
+        }
+
+    }
+}
