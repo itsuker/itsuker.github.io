@@ -1,0 +1,31 @@
+@use '../base/variables' as variable;  //as alias de las variables
+@use '../base/mixins' as mixin; //mixin de las estructuras como shorcoud 
+
+.contenido-menu{
+    background-image: url(../img/cafe.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    aspect-ratio: 3/7;//por cadado horizontal resibe 2 pixeles veretical
+
+
+    @include mixin.telefono {
+        aspect-ratio: 3/5;
+    }
+
+    @include mixin.telefono {
+        aspect-ratio: 3/4;
+    }
+
+    @include mixin.desktop {
+        @include mixin.grid(2 , variable.$separacion);
+        aspect-ratio: 16/6;
+        background-size: 40%;
+        background-position:  bottom right;
+    }
+    .texto{
+      p{
+        font-size: 2rem;
+      }
+    }
+}
